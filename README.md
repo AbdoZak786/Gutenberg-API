@@ -12,55 +12,11 @@ A REST API for querying and retrieving books from the Project Gutenberg reposito
 - **JSON Responses**: Clean, structured JSON output
 - **Auto Documentation**: Interactive API docs at `/docs`
 
-## Quick Start
-
 ### Prerequisites
 
 - Docker and Docker Compose
 - PostgreSQL database dump from Project Gutenberg
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd gutenberg-api
-```
-
-2. Place the PostgreSQL dump file as `gutenberg.sql` in the project root
-
-3. Start the services:
-```bash
-docker-compose up -d
-```
-
-4. Access the API:
-   - API: http://localhost:8000
-   - Interactive docs: http://localhost:8000/docs
-   - Alternative docs: http://localhost:8000/redoc
-
-### Without Docker
-
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Set up PostgreSQL and import the dump:
-```bash
-psql -U postgres -c "CREATE DATABASE gutenberg;"
-psql -U postgres gutenberg < gutenberg.sql
-```
-
-3. Set environment variable:
-```bash
-export DATABASE_URL="postgresql://user:password@localhost:5432/gutenberg"
-```
-
-4. Run the application:
-```bash
-uvicorn main:app --reload
-```
 
 ## API Endpoints
 
